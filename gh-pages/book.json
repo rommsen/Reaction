@@ -1,5 +1,10 @@
 {
+    "plugins": ["insert-logo", "highlight-code"],
     "pluginsConfig": {
+        "insert-logo": {
+            "url": "../logo.jpg",
+            "style": "background: none; width: 140px"
+        },
         "sharing": {
             "facebook": true,
             "twitter": true,
