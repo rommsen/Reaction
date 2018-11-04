@@ -1,6 +1,6 @@
-# Introduction
+# Reaction
 
-Reaction is a library for asynchronous and reactive programming, and is an implementation of Async Observables ([ReactiveX](http://reactivex.io/)) for F#. Reaction makes it easy to compose and combine streams of asynchronous event based data such as timers, mouse-moves, keyboard input, web requests and enables you to do operations such as:
+Reaction is a library for asynchronous and reactive programming, and is an implementation of Async Observables ([ReactiveX](http://reactivex.io/)) for F# and [Fable](http://fable.io/). Reaction makes it easy to compose and combine streams of asynchronous event based data such as timers, mouse-moves, keyboard input, web requests and enables you to do operations such as:
 
 - Filter
 - Transform

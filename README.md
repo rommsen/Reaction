@@ -1,4 +1,4 @@
-# re·ac·tion
+# Reaction
 
 > Reaction is a lightweight Async Reactive library for F#.
 

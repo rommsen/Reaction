@@ -17,6 +17,14 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight-code/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -391,8 +399,17 @@ given subscribe function.</p>
 </ul>
 <h2 id="transforming">Transforming</h2>
 <p>Functions for transforming (<code>IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;b&gt;</code>) an async observable.</p>
+<h2 id="map">map</h2>
+<p>Returns an observable sequence whose elements are the result of
+invoking the mapper function on each element of the source.</p>
+<pre><code class="lang-fs"><span class="hljs-keyword">val</span> map : mapper: (<span class="hljs-symbol">&apos;a</span> -&gt; <span class="hljs-symbol">&apos;b</span>) -&gt; source: IAsyncObservable&lt;<span class="hljs-symbol">&apos;a</span>&gt; -&gt; IAsyncObservable&lt;<span class="hljs-symbol">&apos;b</span>&gt;
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-fs"><span class="hljs-keyword">let</span> mapper x = x * <span class="hljs-number">10</span>
+
+<span class="hljs-keyword">let</span> xs = single <span class="hljs-number">42</span> |&gt; map mapper
+</code></pre>
 <ul>
-<li><strong>map</strong> : (&apos;a -&gt; &apos;b) -&gt; IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;b&gt;</li>
 <li><strong>mapi</strong> : (&apos;a*int -&gt; &apos;b) -&gt; IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;b&gt;</li>
 <li><strong>mapAsync</strong> : (&apos;a -&gt; Async&lt;&apos;b&gt;) -&gt; IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;b&gt;</li>
 <li><strong>mapiAsync</strong> : (&apos;a*int -&gt; Async&lt;&apos;b&gt;) -&gt; IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;b&gt;</li>
@@ -475,6 +492,10 @@ groups, each of which corresponds to a given key.</p>
 <li><strong>delay</strong> : int -&gt; IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;a&gt;</li>
 <li><strong>debounce</strong> : int -&gt; IAsyncObservable&lt;&apos;a&gt; -&gt; IAsyncObservable&lt;&apos;a&gt;</li>
 </ul>
+<h3 id="sample">sample</h3>
+<p>Samples the observable sequence at each interval.</p>
+<pre><code class="lang-fs"><span class="hljs-keyword">val</span> sample : msecs: int source: IAsyncObservable&lt;<span class="hljs-symbol">&apos;a</span>&gt; -&gt; IAsyncObservable&lt;<span class="hljs-symbol">&apos;a</span>&gt;
+</code></pre>
 <h2 id="leaving">Leaving</h2>
 <p>Functions for leaving (<code>IAsyncObservable&lt;&apos;a&gt; -&gt; &apos;a</code>) the async observable.</p>
 <ul>
@@ -523,7 +544,7 @@ groups, each of which corresponds to a given key.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Operators","level":"1.3","depth":1,"next":{"title":"Query Builder","level":"1.4","depth":1,"path":"pages/Query.md","ref":"pages/Query.md","articles":[]},"previous":{"title":"Streams","level":"1.2.4","depth":2,"path":"pages/Streams.md","ref":"pages/Streams.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Operators.md","mtime":"2018-10-21T19:49:19.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-21T19:50:08.273Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Operators","level":"1.3","depth":1,"next":{"title":"Query Builder","level":"1.4","depth":1,"path":"pages/Query.md","ref":"pages/Query.md","articles":[]},"previous":{"title":"Streams","level":"1.2.4","depth":2,"path":"pages/Streams.md","ref":"pages/Streams.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["insert-logo","highlight-code"],"pluginsConfig":{"insert-logo":{"style":"background: none; width: 140px","url":"../logo.jpg"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"highlight-code":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Operators.md","mtime":"2018-10-25T16:24:54.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-04T11:27:02.378Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -531,6 +552,10 @@ groups, each of which corresponds to a given key.</p>
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
